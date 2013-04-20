@@ -17,9 +17,16 @@ int main( int argc, char **argv )
 
 
     // Change the end effector destination in some way (You'll obviously want a loop here instead)
-    manip.translation[RIGHT][0] = 0.359194;
-    manip.translation[RIGHT][1] = -0.297988;
-    manip.translation[RIGHT][2] = -0.15648;
+    manip.translation[RIGHT][0] = 0.2;
+    manip.translation[RIGHT][1] = -0.3;
+    manip.translation[RIGHT][2] = -0.2;
+
+    manip.translation[LEFT][0] = 0.2;
+    manip.translation[LEFT][1] = 0.3;
+    manip.translation[LEFT][2] = -0.2;
+//    manip.translation[RIGHT][0] = 0.359194;
+//    manip.translation[RIGHT][1] = -0.297988;
+//    manip.translation[RIGHT][2] = -0.15648;
 
     // Put the modified struct onto the channel
     ach_put( &chan_manip_cmd, &manip, sizeof(manip) );
