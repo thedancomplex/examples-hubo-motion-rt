@@ -42,8 +42,8 @@ int main( int argc, char **argv )
         manip.translation[RIGHT][2] = y[i];
 
         manip.translation[LEFT][0] = 0.2;
-        manip.translation[LEFT][1] = 0.3;
-        manip.translation[LEFT][2] = -0.2;
+        manip.translation[LEFT][1] = -x[i];
+        manip.translation[LEFT][2] = y[i];
         ach_put( &chan_manip_cmd, &manip, sizeof(manip) );
         if(i < 3){ i = i+1;}
         else{ i = 0; }
