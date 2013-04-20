@@ -17,6 +17,7 @@ int main( int argc, char **argv )
 
 
     // Change the end effector destination in some way (You'll obviously want a loop here instead)
+
     manip.translation[RIGHT][0] = 0.2;
     manip.translation[RIGHT][1] = -0.3;
     manip.translation[RIGHT][2] = -0.2;
@@ -30,6 +31,25 @@ int main( int argc, char **argv )
 
     // Put the modified struct onto the channel
     ach_put( &chan_manip_cmd, &manip, sizeof(manip) );
+
+    double x [4] = { -0.25, -0.45, -0.45, -0.25};
+    double y [4] = { -0.2, -0.2, 0.2, 0.2};
+    int i = 0;
+
+    while(1){
+        manip.translation[RIGHT][0] = 0.2;
+        manip.translation[RIGHT][1] = x[i];
+        manip.translation[RIGHT][2] = y[i];
+
+        manip.translation[LEFT][0] = 0.2;
+        manip.translation[LEFT][1] = 0.3;
+        manip.translation[LEFT][2] = -0.2;
+        ach_put( &chan_manip_cmd, &manip, sizeof(manip) );
+        if(i < 3){ i = i+1;}
+        else{ i = 0; }
+	usleep(5000*1000);  // sleep for 3000ms
+    }
+
 
     ach_close( &chan_manip_cmd );
 
