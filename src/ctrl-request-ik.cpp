@@ -35,7 +35,7 @@ int main( int argc, char **argv )
     double x [4] = { -0.25, -0.45, -0.45, -0.25};
     double y [4] = { -0.2, -0.2, 0.2, 0.2};
     int i = 0;
-
+/*
     while(1){
         manip.translation[RIGHT][0] = 0.2;
         manip.translation[RIGHT][1] = x[i];
@@ -49,7 +49,7 @@ int main( int argc, char **argv )
         else{ i = 0; }
 	usleep(5000*1000);  // sleep for 3000ms
     }
-
+*/
 
     ach_close( &chan_manip_cmd );
 
