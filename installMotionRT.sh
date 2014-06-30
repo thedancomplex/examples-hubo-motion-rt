@@ -28,7 +28,7 @@ export CMAKE_PREFIX_PATH=$ROBOTKIN_INSTALL_PATH:$CMAKE_PREFIX_PATH
 # Set the following for runtime
 export LD_LIBRARY_PATH=$ROBOTKIN_INSTALL_PATH/lib:$LD_LIBRARY_PATH
 
-hg clone https://bitbucket.org/ros/urdfdom_headers
+git clone https://github.com/ros/urdfdom_headers
 mkdir urdfdom_headers/build && cd urdfdom_headers/build
 sudo cmake -DCMAKE_INSTALL_PREFIX:PATH=$ROBOTKIN_DEP_INSTALL_PATH ..
 sudo make install
@@ -40,7 +40,7 @@ sudo cmake -DCMAKE_INSTALL_PREFIX:PATH=$ROBOTKIN_DEP_INSTALL_PATH ..
 sudo make install
 cd ../..
 
-hg clone https://bitbucket.org/ros/urdfdom
+git clone https://github.com/ros/urdfdom
 mkdir urdfdom/build && cd urdfdom/build
 sudo cmake -DCMAKE_INSTALL_PREFIX:PATH=$ROBOTKIN_DEP_INSTALL_PATH ..
 sudo make install
